@@ -101,6 +101,8 @@ case "$TARGET" in
 esac
 
 export PATH="$TC_DIR/bin:$PREBUILTS_DIR/bin:$PATH"
+export KBUILD_BUILD_USER="nobody"
+export KBUILD_BUILD_HOST="android-build"
 
 function m() {
     make -j$(nproc --all) O=out ARCH=arm64 LLVM=1 LLVM_IAS=1 \
